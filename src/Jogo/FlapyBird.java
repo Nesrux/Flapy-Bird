@@ -6,37 +6,49 @@ public class FlapyBird implements Jogo {
 
 	@Override
 	public String getTitulo() {
-		// TODO Auto-generated method stub
+
 		return "Flapy Bird";
 	}
 
 	@Override
 	public int getAltura() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return 512;
 	}
 
 	@Override
 	public int getLargura() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return 384;
 	}
 
 	@Override
 	public void tique(Set<String> teclas, double dt) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void tecla(String tecla) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void desenhar(Tela tela) {
-		// TODO Auto-generated method stub
+		// Desenha o background do jogo
+		tela.imagem("flappy.png", 0, 0, 288, 512, 0, 0, 0);
+		tela.imagem("flappy.png", 0, 0, 288, 512, 0, 288, 0);
+		tela.imagem("flappy.png", 0, 0, 288, 512, 0, 288 * 2, 0);
 
+		// Desenha o chão do jogo
+		tela.imagem("flappy.png", 292, 0, 308, 112, 0, 0, 400);
+		tela.imagem("flappy.png", 292, 0, 308, 112, 0, 288, 400);
+	}
+
+	public static void main(String[] args) {
+		roda();
+	}
+
+	private static void roda() {
+		new Motor(new FlapyBird());
 	}
 }
