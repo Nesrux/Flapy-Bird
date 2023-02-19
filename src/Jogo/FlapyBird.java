@@ -29,7 +29,7 @@ public class FlapyBird implements Jogo {
 	@Override
 	public void tique(Set<String> teclas, double dt) {
 		chao_offset += dt * chao_vel;
-		chao_offset = chao_offset % 112;
+		chao_offset = chao_offset % 308;
 
 	}
 
@@ -47,7 +47,7 @@ public class FlapyBird implements Jogo {
 
 		// Desenha o chão do jogo
 		tela.imagem("flappy.png", 292, 0, 308, 112, 0, -chao_offset, getAltura() - 112);
-		tela.imagem("flappy.png", 292, 0, 308, 112, 0, 288, getAltura() - 112);
+		tela.imagem("flappy.png", 292, 0, 308, 112, 0, 308 - chao_offset, getAltura() - 112);
 		// tela.imagem("flappy.png", 292, 0, 308, 112, 0, 288 * 2, 400);
 	}
 
